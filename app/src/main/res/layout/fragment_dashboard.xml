@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginHorizontal="20dp"
+    tools:context=".ui.home.Dashboard">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="#3a3f52"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                style="@style/largeText"
+                android:text="TOTAL ADMIN USERS" />
+
+            <TextView
+                android:id="@+id/totalAdminUserTv"
+                style="@style/smallText"
+                android:text="loading" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="#7266ba"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                style="@style/largeText"
+                android:text="TOTAL MOBILE USERS" />
+
+            <TextView
+                android:id="@+id/totalMobileUserTv"
+                style="@style/smallText"
+                android:text="loading" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="#36bc9b"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                style="@style/largeText"
+                android:text="TOTAL VIEW TASKS" />
+
+            <TextView
+                android:id="@+id/totalViewTasksTv"
+                style="@style/smallText"
+                android:text="loading" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="#f05050"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                style="@style/largeText"
+                android:text="TOTAL SUBSCRIBE TASKS" />
+
+            <TextView
+                android:id="@+id/totalSubscribeTasksTv"
+                style="@style/smallText"
+                android:text="loading" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="#5d9cec"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                style="@style/largeText"
+                android:text="TOTAL LIKE TASKS" />
+
+            <TextView
+                android:id="@+id/totalLikeTasksTv"
+                style="@style/smallText"
+                android:text="loading" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

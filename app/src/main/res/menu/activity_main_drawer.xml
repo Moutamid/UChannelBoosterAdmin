@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_dashboard"
+            android:icon="@drawable/ic_baseline_dashboard_24"
+            android:title="Dashboard" />
+        <item
+            android:id="@+id/nav_admin_users"
+            android:icon="@drawable/ic_baseline_people_alt_24"
+            android:title="Admin Users" />
+        <item
+            android:id="@+id/nav_app_user"
+            android:icon="@drawable/ic_baseline_supervised_user_circle_24"
+            android:title="App Users" />
+
+        <item
+            android:id="@+id/nav_view_tasks"
+            android:icon="@drawable/ic_baseline_remove_red_eye_24"
+            android:title="View Tasks" />
+
+        <item
+            android:id="@+id/nav_like_tasks"
+            android:icon="@drawable/ic_baseline_thumb_up_off_alt_24"
+            android:title="Like Tasks" />
+
+        <item
+            android:id="@+id/nav_subscribe_tasks"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Subscribe Tasks" />
+
+        <item
+            android:id="@+id/nav_banners"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Edit Banners" />
+
+        <item
+            android:id="@+id/nav_coins"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Edit Coins" />
+
+    </group>
+</menu>

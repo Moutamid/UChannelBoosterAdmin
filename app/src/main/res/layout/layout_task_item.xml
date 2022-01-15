@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="15dp">
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_menu_gallery" />
+
+    <LinearLayout style="@style/linear">
+
+        <TextView
+            android:id="@+id/poster_id_tv_task"
+            style="@style/tvv"
+            android:text="POSTER ID: 123456" />
+
+        <TextView
+            android:id="@+id/total_tv_task"
+            style="@style/tvv"
+            android:text="TOTAL VIEWS: 123456" />
+
+        <TextView
+            android:id="@+id/current_tv_task"
+            style="@style/tvv"
+            android:text="CURRENT VIEWS: 123456" />
+
+        <TextView
+            android:id="@+id/completed_tv_task"
+            style="@style/tvv"
+            android:text="COMPLETED DATE: error" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/qwer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/editBtn_task"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="5dp"
+            android:src="@drawable/ic_baseline_edit_24" />
+
+        <ImageView
+            android:id="@+id/deleteBtn_task"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="5dp"
+            android:src="@drawable/ic_baseline_delete_24" />
+
+        <ImageView
+            android:id="@+id/viewBtn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="5dp"
+            android:src="@drawable/ic_baseline_remove_red_eye_24" />
+
+
+    </LinearLayout>
+
+</RelativeLayout>

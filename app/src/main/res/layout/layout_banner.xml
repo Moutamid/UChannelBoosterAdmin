@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp">
+
+    <ImageView
+        android:id="@+id/imageviewB"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_centerVertical="true" />
+
+    <TextView
+        android:id="@+id/linkk"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="10dp"
+        android:layout_toStartOf="@id/deleteBtnB"
+        android:layout_toEndOf="@id/imageviewB"
+        android:text="Link url" />
+
+
+    <ImageView
+        android:id="@+id/deleteBtnB"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_margin="5dp"
+        android:src="@drawable/ic_baseline_delete_24" />
+
+</RelativeLayout>

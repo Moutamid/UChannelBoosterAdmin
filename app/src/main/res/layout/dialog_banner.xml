@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <EditText
+        android:id="@+id/linkEtDialogBanner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Image link" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:id="@+id/radioGroupDialogBanner"
+        android:checkedButton="@id/likeRadioBtnDialogBanner"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/likeRadioBtnDialogBanner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Like" />
+
+        <RadioButton
+            android:id="@+id/viewRadioBtnDialogBanner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:text="View" />
+
+        <RadioButton
+            android:id="@+id/subscribeRadioBtnDialogBanner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Subscribe" />
+
+    </RadioGroup>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="@color/black"
+        android:id="@+id/doneBtnDialogBanner"
+        android:layout_marginBottom="20dp"
+        android:text="Done" />
+
+</LinearLayout>

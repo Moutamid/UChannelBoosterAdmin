@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <com.google.android.material.textfield.TextInputLayout style="@style/outlinebox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/task_key_et_task"
+                style="@style/ettext"
+                android:hint="TASK KEY"
+                android:inputType="text" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout style="@style/outlinebox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/poster_id_et_task"
+                style="@style/ettext"
+                android:hint="POSTER ID"
+                android:inputType="text" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout style="@style/outlinebox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/thumbnail_et_task"
+                style="@style/ettext"
+                android:hint="THUMBNAIL"
+                android:inputType="text" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout style="@style/outlinebox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/video_url_et_task"
+                style="@style/ettext"
+                android:hint="VIDEO URL"
+                android:inputType="text" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout style="@style/outlinebox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/total_et_task"
+                style="@style/ettext"
+                android:hint="TOTAL VIEWS"
+                android:inputType="number" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout style="@style/outlinebox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/current_et_task"
+                style="@style/ettext"
+                android:hint="CURRENT VIEWS"
+                android:inputType="number" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout style="@style/outlinebox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/completed_et_task"
+                style="@style/ettext"
+                android:hint="COMPLETED DATE"
+                android:inputType="text" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout style="@style/outlinebox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/total_time_et_task"
+                style="@style/ettext"
+                android:hint="TOTAL VIEW TIME"
+                android:inputType="number"
+                android:visibility="gone" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/save_btn_tasks"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/black"
+            android:text="SAVE" />
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
