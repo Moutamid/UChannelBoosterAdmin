@@ -51,4 +51,10 @@
         android:label="Edit Coins"
         tools:layout="@layout/fragment_coins" />
 
+    <fragment
+        android:id="@+id/nav_campaign_values"
+        android:name="com.moutamid.viewplusadmin.fragments.CampaignValuesFragment"
+        android:label="Edit Campaign Values"
+        tools:layout="@layout/fragment_campaign_values" />
+
 </navigation>

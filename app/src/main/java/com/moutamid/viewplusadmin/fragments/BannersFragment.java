@@ -41,6 +41,7 @@ import com.moutamid.viewplusadmin.utils.Constants;
 import com.moutamid.viewplusadmin.utils.Utils;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class BannersFragment extends Fragment {
 
@@ -64,7 +65,7 @@ public class BannersFragment extends Fragment {
                     if (snapshot.child("like").exists()) {
                         for (DataSnapshot likeSnapshot : snapshot.child("like").getChildren()) {
                             BannerModel model = new BannerModel();
-                            model.setLink(likeSnapshot.getValue(String.class));
+                            model.setLink(likeSnapshot.child("link").getValue(String.class));
                             model.setPushKey(likeSnapshot.getKey());
                             model.setType(Constants.TYPE_LIKE);
 
@@ -74,9 +75,9 @@ public class BannersFragment extends Fragment {
 
                     if (snapshot.child("subscribe").exists()) {
                         for (DataSnapshot subscribeSnapshot : snapshot.child("subscribe").getChildren()) {
-                            Log.i(TAG, "onDataChange: "+subscribeSnapshot.getValue(String.class));
+                            Log.i(TAG, "onDataChange: "+subscribeSnapshot.getKey());
                             BannerModel model = new BannerModel();
-                            model.setLink(subscribeSnapshot.getValue(String.class));
+                            model.setLink(subscribeSnapshot.child("link").getValue(String.class));
                             model.setPushKey(subscribeSnapshot.getKey());
                             model.setType(Constants.TYPE_SUBSCRIBE);
 
@@ -86,9 +87,9 @@ public class BannersFragment extends Fragment {
 
                     if (snapshot.child("view").exists()) {
                         for (DataSnapshot viewSnapshot : snapshot.child("view").getChildren()) {
-                            Log.i(TAG, "onDataChange: "+viewSnapshot.getValue(String.class));
+                            Log.i(TAG, "onDataChange: "+viewSnapshot.child("link").getValue(String.class));
                             BannerModel model = new BannerModel();
-                            model.setLink(viewSnapshot.getValue(String.class));
+                            model.setLink(viewSnapshot.child("link").getValue(String.class));
                             model.setPushKey(viewSnapshot.getKey());
                             model.setType(Constants.TYPE_VIEW);
 
@@ -161,8 +162,15 @@ public class BannersFragment extends Fragment {
                 if (subscribeRBtn.isChecked())
                     type = "subscribe";
 
+                String key = Utils.databaseReference().child("Banners").child(type)
+                        .push().getKey();
+
+                HashMap<String, String> hashMap = new HashMap<>();
+                hashMap.put("id", key);
+                hashMap.put("link", linkEt.getText().toString());
+
                 Utils.databaseReference().child("Banners").child(type)
-                        .push().setValue(linkEt.getText().toString());
+                        .child(key).setValue(hashMap);
 
                 dialog.dismiss();
             }

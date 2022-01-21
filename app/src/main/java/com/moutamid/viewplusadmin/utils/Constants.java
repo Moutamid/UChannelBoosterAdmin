@@ -9,4 +9,9 @@ public class Constants {
     public static final String VIEW_COINS = "view_coins";
     public static final String LIKE_COINS = "like_coins";
     public static final String SUBSCRIBE_COINS = "subscribe_coins";
+    public static final String ADD_TASK_VARIABLES = "add_tasks_variable";
+    public static final String TIME_ARRAY = "time_array";
+    public static final String QUANTITY_ARRAY = "quantity_array";
+    public static final String CUT_OFF_AMOUNT_OF_TASKS = "cut_of_amount_of_tasks";
+
 }
