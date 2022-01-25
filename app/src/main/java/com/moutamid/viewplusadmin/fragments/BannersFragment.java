@@ -66,6 +66,7 @@ public class BannersFragment extends Fragment {
                         for (DataSnapshot likeSnapshot : snapshot.child("like").getChildren()) {
                             BannerModel model = new BannerModel();
                             model.setLink(likeSnapshot.child("link").getValue(String.class));
+                            model.setClick(likeSnapshot.child("click").getValue(String.class));
                             model.setPushKey(likeSnapshot.getKey());
                             model.setType(Constants.TYPE_LIKE);
 
@@ -78,6 +79,7 @@ public class BannersFragment extends Fragment {
                             Log.i(TAG, "onDataChange: "+subscribeSnapshot.getKey());
                             BannerModel model = new BannerModel();
                             model.setLink(subscribeSnapshot.child("link").getValue(String.class));
+                            model.setClick(subscribeSnapshot.child("click").getValue(String.class));
                             model.setPushKey(subscribeSnapshot.getKey());
                             model.setType(Constants.TYPE_SUBSCRIBE);
 
@@ -90,6 +92,7 @@ public class BannersFragment extends Fragment {
                             Log.i(TAG, "onDataChange: "+viewSnapshot.child("link").getValue(String.class));
                             BannerModel model = new BannerModel();
                             model.setLink(viewSnapshot.child("link").getValue(String.class));
+                            model.setClick(viewSnapshot.child("click").getValue(String.class));
                             model.setPushKey(viewSnapshot.getKey());
                             model.setType(Constants.TYPE_VIEW);
 
@@ -142,6 +145,7 @@ public class BannersFragment extends Fragment {
         layoutParams.height = WindowManager.LayoutParams.WRAP_CONTENT;
 
         EditText linkEt = dialog.findViewById(R.id.linkEtDialogBanner);
+        EditText clickEt = dialog.findViewById(R.id.clickEtDialogBanner);
         RadioGroup radioGroup = dialog.findViewById(R.id.radioGroupDialogBanner);
         RadioButton likeRBtn = dialog.findViewById(R.id.likeRadioBtnDialogBanner);
         RadioButton subscribeRBtn = dialog.findViewById(R.id.subscribeRadioBtnDialogBanner);
@@ -152,6 +156,9 @@ public class BannersFragment extends Fragment {
             public void onClick(View view) {
 
                 if (linkEt.getText().toString().isEmpty())
+                    return;
+
+                if (clickEt.getText().toString().isEmpty())
                     return;
 
                 String type = "like";
@@ -168,6 +175,7 @@ public class BannersFragment extends Fragment {
                 HashMap<String, String> hashMap = new HashMap<>();
                 hashMap.put("id", key);
                 hashMap.put("link", linkEt.getText().toString());
+                hashMap.put("click", clickEt.getText().toString());
 
                 Utils.databaseReference().child("Banners").child(type)
                         .child(key).setValue(hashMap);
@@ -191,10 +199,10 @@ public class BannersFragment extends Fragment {
 
         @Override
         public void onBindViewHolder(@NonNull final ViewHolderRightMessage holder, int position) {
-
             BannerModel model = bannersArrayList.get(position);
 
             holder.link.setText(model.getType() + model.getLink());
+            holder.click.setText("Click url: " + model.getClick());
 
             holder.link.setOnClickListener(view -> {
                 Utils.toast(model.getPushKey());
@@ -242,13 +250,14 @@ public class BannersFragment extends Fragment {
 
         public class ViewHolderRightMessage extends RecyclerView.ViewHolder {
 
-            TextView link;
+            TextView link, click;
             ImageView imageview, deleteBtn;
 
             public ViewHolderRightMessage(@NonNull View v) {
                 super(v);
                 deleteBtn = v.findViewById(R.id.deleteBtnB);
                 link = v.findViewById(R.id.linkk);
+                click = v.findViewById(R.id.clickk);
                 imageview = v.findViewById(R.id.imageviewB);
             }
         }

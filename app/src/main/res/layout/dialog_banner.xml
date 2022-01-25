@@ -11,6 +11,12 @@
         android:layout_height="wrap_content"
         android:hint="Image link" />
 
+    <EditText
+        android:id="@+id/clickEtDialogBanner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Click link" />
+
     <RadioGroup
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -1,7 +1,15 @@
 package com.moutamid.viewplusadmin.models;
 
 public class BannerModel {
-    private String link, pushKey, type;
+    private String link, pushKey, type, click;
+
+    public String getClick() {
+        return click;
+    }
+
+    public void setClick(String click) {
+        this.click = click;
+    }
 
     public String getLink() {
         return link;

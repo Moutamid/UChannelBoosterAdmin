@@ -18,36 +18,36 @@
             android:id="@+id/timeListBtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:textSize="11sp"
             android:layout_weight="1"
             android:backgroundTint="@color/black"
-            android:text="Time List" />
+            android:text="Time List"
+            android:textSize="11sp" />
 
         <Button
             android:id="@+id/quantityListBtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textSize="11sp"
             android:backgroundTint="#807E7E"
-            android:text="Quantity List" />
+            android:text="Quantity List"
+            android:textSize="11sp" />
 
         <Button
             android:id="@+id/tasks_cut_ofBtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:textSize="11sp"
             android:layout_weight="2"
             android:backgroundTint="#807E7E"
-            android:text="Subscribe/Like Cut Off" />
+            android:text="Subscribe/Like Cut Off"
+            android:textSize="11sp" />
 
 
     </LinearLayout>
 
     <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollViewLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/scrollViewLayout"
         android:layout_below="@id/topButtonsLayout">
 
         <LinearLayout
@@ -68,23 +68,84 @@
 
     </androidx.core.widget.NestedScrollView>
 
-    <com.google.android.material.textfield.TextInputLayout
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+    <LinearLayout
+        android:id="@+id/cut_off_amountLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:visibility="gone"
-        android:id="@+id/cut_off_amountLayout"
-        android:layout_marginStart="20dp">
+        android:layout_marginHorizontal="20dp"
+        android:orientation="vertical"
+        android:visibility="gone">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/cut_off_amountET"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/cut_off_amountLayoutSubscribe"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Tasks cut of amount (Subscribe/Like)"
-            android:inputType="number"
-            android:maxLines="1" />
+            android:layout_marginVertical="10dp">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/cut_off_amountETSubscribe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Tasks cut of amount (Subscribe)"
+                android:inputType="number"
+                android:maxLines="1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/cut_off_amountLayoutLike"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/cut_off_amountETLike"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Tasks cut of amount (Like)"
+                android:inputType="number"
+                android:maxLines="1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/cut_off_amountLayoutView"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/cut_off_amountETView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Tasks cut of amount (View)"
+                android:inputType="number"
+                android:maxLines="1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:visibility="gone">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/cut_off_amountET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Tasks cut of amount (All)"
+                android:inputType="number"
+                android:maxLines="1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
 
 </RelativeLayout>

@@ -95,12 +95,33 @@ public class CampaignValuesFragment extends Fragment {
                                     viewQuantityListModel.add(model);
                                 }
                             }
-                            if (snapshot.child(Constants.CUT_OFF_AMOUNT_OF_TASKS).exists()) {
+                            if (snapshot.child(Constants.CUT_OFF_AMOUNT_OF_VIEWS).exists()) {
+                                b.cutOffAmountETView.setText(""+snapshot.child(Constants.CUT_OFF_AMOUNT_OF_VIEWS)
+                                        .getValue(Integer.class));
+                            } else {
+                                b.cutOffAmountETView.setText("60");
+                            }
+
+                            if (snapshot.child(Constants.CUT_OFF_AMOUNT_OF_LIKE).exists()) {
+                                b.cutOffAmountETLike.setText(""+snapshot.child(Constants.CUT_OFF_AMOUNT_OF_LIKE)
+                                        .getValue(Integer.class));
+                            } else {
+                                b.cutOffAmountETLike.setText("60");
+                            }
+
+                            if (snapshot.child(Constants.CUT_OFF_AMOUNT_OF_SUBSCRIBE).exists()) {
+                                b.cutOffAmountETSubscribe.setText(""+snapshot.child(Constants.CUT_OFF_AMOUNT_OF_SUBSCRIBE)
+                                        .getValue(Integer.class));
+                            } else {
+                                b.cutOffAmountETSubscribe.setText("60");
+                            }
+
+                            /*if (snapshot.child(Constants.CUT_OFF_AMOUNT_OF_TASKS).exists()) {
                                 b.cutOffAmountET.setText(""+snapshot.child(Constants.CUT_OFF_AMOUNT_OF_TASKS)
                                         .getValue(Integer.class));
                             } else {
                                 b.cutOffAmountET.setText("60");
-                            }
+                            }*/
 
                             initRecyclerView();
                         }
@@ -147,7 +168,15 @@ public class CampaignValuesFragment extends Fragment {
         });
 
 
-        b.cutOffAmountET.addTextChangedListener(new TextWatcher() {
+        b.cutOffAmountETView.addTextChangedListener(cutOffAmountEtWatcher(Constants.CUT_OFF_AMOUNT_OF_VIEWS));
+        b.cutOffAmountETLike.addTextChangedListener(cutOffAmountEtWatcher(Constants.CUT_OFF_AMOUNT_OF_LIKE));
+        b.cutOffAmountETSubscribe.addTextChangedListener(cutOffAmountEtWatcher(Constants.CUT_OFF_AMOUNT_OF_SUBSCRIBE));
+
+        return b.getRoot();
+    }
+
+    private TextWatcher cutOffAmountEtWatcher(String cutOffAmountChild) {
+        return new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
@@ -161,7 +190,7 @@ public class CampaignValuesFragment extends Fragment {
                 int value = Integer.parseInt(String.valueOf(charSequence));
 
                 Utils.databaseReference().child(Constants.ADD_TASK_VARIABLES)
-                        .child(Constants.CUT_OFF_AMOUNT_OF_TASKS)
+                        .child(cutOffAmountChild)
                         .setValue(value);
             }
 
@@ -169,9 +198,7 @@ public class CampaignValuesFragment extends Fragment {
             public void afterTextChanged(Editable editable) {
 
             }
-        });
-
-        return b.getRoot();
+        };
     }
 
     private void initRecyclerView() {
