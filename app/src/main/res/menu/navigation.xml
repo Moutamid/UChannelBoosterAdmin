@@ -3,7 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:title="Log out"
-        app:showAsAction="never" />
+        android:title="@string/log_out" />
+
+    <item
+        android:id="@+id/nav_language"
+        android:title="@string/language" />
 </menu>

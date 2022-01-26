@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:backgroundTint="@color/black"
-            android:text="Time List"
+            android:text="@string/time_list"
             android:textSize="11sp" />
 
         <Button
@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:backgroundTint="#807E7E"
-            android:text="Quantity List"
+            android:text="@string/quantity_list"
             android:textSize="11sp" />
 
         <Button
@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="2"
             android:backgroundTint="#807E7E"
-            android:text="Subscribe/Like Cut Off"
+            android:text="@string/subscribe_like_cut_off"
             android:textSize="11sp" />
 
 
@@ -88,7 +88,7 @@
                 android:id="@+id/cut_off_amountETSubscribe"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Tasks cut of amount (Subscribe)"
+                android:hint="@string/tasks_cut_of_amount_subscribe"
                 android:inputType="number"
                 android:maxLines="1" />
 
@@ -105,7 +105,7 @@
                 android:id="@+id/cut_off_amountETLike"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Tasks cut of amount (Like)"
+                android:hint="@string/tasks_cut_of_amount_like"
                 android:inputType="number"
                 android:maxLines="1" />
 
@@ -122,7 +122,7 @@
                 android:id="@+id/cut_off_amountETView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Tasks cut of amount (View)"
+                android:hint="@string/tasks_cut_of_amount_view"
                 android:inputType="number"
                 android:maxLines="1" />
 
@@ -139,7 +139,7 @@
                 android:id="@+id/cut_off_amountET"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Tasks cut of amount (All)"
+                android:hint="@string/tasks_cut_of_amount_all"
                 android:inputType="number"
                 android:maxLines="1" />
 

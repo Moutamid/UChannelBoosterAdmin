@@ -1,6 +1,7 @@
 package com.moutamid.viewplusadmin.activities;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
@@ -15,15 +16,25 @@ import com.google.firebase.database.ValueEventListener;
 import com.moutamid.viewplusadmin.databinding.ActivityMainBinding;
 import com.moutamid.viewplusadmin.models.AdminUserModel;
 import com.moutamid.viewplusadmin.utils.Constants;
+import com.moutamid.viewplusadmin.utils.ContextWrapper;
 import com.moutamid.viewplusadmin.utils.Utils;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding b;
 
     ArrayList<AdminUserModel> modelArrayList = new ArrayList<>();
     private ProgressDialog progressDialog;
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        Locale newLocale = new Locale(Utils.getString(Constants.CURRENT_LANGUAGE_CODE, "ko"));
+
+        Context context = ContextWrapper.wrap(newBase, newLocale);
+        super.attachBaseContext(context);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

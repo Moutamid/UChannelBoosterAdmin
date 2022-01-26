@@ -11,7 +11,7 @@
             android:id="@+id/coins_et_users"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter coins"
+            android:hint="@string/enter_coins"
             android:inputType="number"
             android:maxLines="1" />
 
@@ -23,7 +23,7 @@
             android:id="@+id/email_et_users"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter email"
+            android:hint="@string/enter_email"
             android:inputType="text"
             android:maxLines="1" />
 
@@ -43,14 +43,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
-            android:text="True" />
+            android:text="@string/truee" />
 
         <RadioButton
             android:id="@+id/falseRadioBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
-            android:text="False" />
+            android:text="@string/falsee" />
 
 
     </RadioGroup>
@@ -61,6 +61,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:backgroundTint="@color/black"
-        android:text="SAVE" />
+        android:text="@string/save" />
 
 </LinearLayout>

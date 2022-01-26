@@ -22,12 +22,12 @@
 
             <TextView
                 style="@style/largeText"
-                android:text="TOTAL ADMIN USERS" />
+                android:text="@string/total_admin_users" />
 
             <TextView
                 android:id="@+id/totalAdminUserTv"
                 style="@style/smallText"
-                android:text="loading" />
+                android:text="@string/loading" />
 
         </LinearLayout>
 
@@ -41,12 +41,12 @@
 
             <TextView
                 style="@style/largeText"
-                android:text="TOTAL MOBILE USERS" />
+                android:text="@string/total_mobile_users" />
 
             <TextView
                 android:id="@+id/totalMobileUserTv"
                 style="@style/smallText"
-                android:text="loading" />
+                android:text="@string/loading" />
 
         </LinearLayout>
 
@@ -60,12 +60,12 @@
 
             <TextView
                 style="@style/largeText"
-                android:text="TOTAL VIEW TASKS" />
+                android:text="@string/total_view_tasks" />
 
             <TextView
                 android:id="@+id/totalViewTasksTv"
                 style="@style/smallText"
-                android:text="loading" />
+                android:text="@string/loading" />
 
         </LinearLayout>
 
@@ -79,12 +79,12 @@
 
             <TextView
                 style="@style/largeText"
-                android:text="TOTAL SUBSCRIBE TASKS" />
+                android:text="@string/total_subscribe_tasks" />
 
             <TextView
                 android:id="@+id/totalSubscribeTasksTv"
                 style="@style/smallText"
-                android:text="loading" />
+                android:text="@string/loading" />
 
         </LinearLayout>
 
@@ -98,12 +98,12 @@
 
             <TextView
                 style="@style/largeText"
-                android:text="TOTAL LIKE TASKS" />
+                android:text="@string/total_like_tasks" />
 
             <TextView
                 android:id="@+id/totalLikeTasksTv"
                 style="@style/smallText"
-                android:text="loading" />
+                android:text="@string/loading" />
 
         </LinearLayout>
 

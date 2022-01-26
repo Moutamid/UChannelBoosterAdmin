@@ -16,7 +16,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/task_key_et_task"
                 style="@style/ettext"
-                android:hint="TASK KEY"
+                android:hint="@string/task_key"
                 android:inputType="text" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -26,7 +26,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/poster_id_et_task"
                 style="@style/ettext"
-                android:hint="POSTER ID"
+                android:hint="@string/poster_id"
                 android:inputType="text" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -36,7 +36,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/thumbnail_et_task"
                 style="@style/ettext"
-                android:hint="THUMBNAIL"
+                android:hint="@string/thumbnail"
                 android:inputType="text" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -46,7 +46,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/video_url_et_task"
                 style="@style/ettext"
-                android:hint="VIDEO URL"
+                android:hint="@string/video_url"
                 android:inputType="text" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -56,7 +56,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/total_et_task"
                 style="@style/ettext"
-                android:hint="TOTAL VIEWS"
+                android:hint="@string/total_views"
                 android:inputType="number" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -66,7 +66,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/current_et_task"
                 style="@style/ettext"
-                android:hint="CURRENT VIEWS"
+                android:hint="@string/current_views"
                 android:inputType="number" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -76,7 +76,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/completed_et_task"
                 style="@style/ettext"
-                android:hint="COMPLETED DATE"
+                android:hint="@string/completed_date"
                 android:inputType="text" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -86,7 +86,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/total_time_et_task"
                 style="@style/ettext"
-                android:hint="TOTAL VIEW TIME"
+                android:hint="@string/total_view_time"
                 android:inputType="number"
                 android:visibility="gone" />
 
@@ -98,7 +98,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:backgroundTint="@color/black"
-            android:text="SAVE" />
+            android:text="@string/save" />
 
     </LinearLayout>
 

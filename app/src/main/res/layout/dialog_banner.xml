@@ -9,13 +9,13 @@
         android:id="@+id/linkEtDialogBanner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Image link" />
+        android:hint="@string/image_link" />
 
     <EditText
         android:id="@+id/clickEtDialogBanner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Click link" />
+        android:hint="@string/click_link" />
 
     <RadioGroup
         android:layout_width="match_parent"
@@ -29,20 +29,20 @@
             android:id="@+id/likeRadioBtnDialogBanner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Like" />
+            android:text="@string/like" />
 
         <RadioButton
             android:id="@+id/viewRadioBtnDialogBanner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
-            android:text="View" />
+            android:text="@string/view" />
 
         <RadioButton
             android:id="@+id/subscribeRadioBtnDialogBanner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Subscribe" />
+            android:text="@string/subscribe" />
 
     </RadioGroup>
 
@@ -53,6 +53,6 @@
         android:backgroundTint="@color/black"
         android:id="@+id/doneBtnDialogBanner"
         android:layout_marginBottom="20dp"
-        android:text="Done" />
+        android:text="@string/done" />
 
 </LinearLayout>

@@ -7,45 +7,45 @@
         <item
             android:id="@+id/nav_dashboard"
             android:icon="@drawable/ic_baseline_dashboard_24"
-            android:title="Dashboard" />
+            android:title="@string/dashboard" />
         <item
             android:id="@+id/nav_admin_users"
             android:icon="@drawable/ic_baseline_people_alt_24"
-            android:title="Admin Users" />
+            android:title="@string/admin_users" />
         <item
             android:id="@+id/nav_app_user"
             android:icon="@drawable/ic_baseline_supervised_user_circle_24"
-            android:title="App Users" />
+            android:title="@string/app_users" />
 
         <item
             android:id="@+id/nav_view_tasks"
             android:icon="@drawable/ic_baseline_remove_red_eye_24"
-            android:title="View Tasks" />
+            android:title="@string/view_tasks" />
 
         <item
             android:id="@+id/nav_like_tasks"
             android:icon="@drawable/ic_baseline_thumb_up_off_alt_24"
-            android:title="Like Tasks" />
+            android:title="@string/like_tasks" />
 
         <item
             android:id="@+id/nav_subscribe_tasks"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="Subscribe Tasks" />
+            android:title="@string/subscribe_tasks" />
 
         <item
             android:id="@+id/nav_banners"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="Edit Banners" />
+            android:title="@string/edit_banners" />
 
         <item
             android:id="@+id/nav_coins"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="Edit Coins" />
+            android:title="@string/edit_coins" />
 
         <item
-            android:id="@+id/nav_campaign_values"
+            android:id="@+id/nav_notifications"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="Edit Campaign Values" />
+            android:title="@string/notifications" />
 
     </group>
 </menu>
