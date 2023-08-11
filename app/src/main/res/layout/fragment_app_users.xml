@@ -6,9 +6,30 @@
     android:layout_height="match_parent"
     tools:context=".ui.slideshow.AppUsersFragment">
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/topedittext"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/appUsersEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Search by email"
+            android:inputType="text"
+            android:maxLines="1" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_below="@id/topedittext"
+        android:layout_marginTop="10dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -17,10 +38,10 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_view_users"
-                tools:listitem="@layout/layout_users_item"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 tools:itemCount="5"
-                android:layout_height="wrap_content" />
+                tools:listitem="@layout/layout_users_item" />
 
             <View
                 android:layout_width="match_parent"

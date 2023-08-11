@@ -7,59 +7,59 @@
 
     <fragment
         android:id="@+id/nav_dashboard"
-        android:name="com.moutamid.viewplusadmin.ui.home.Dashboard"
+        android:name="com.moutamid.uchannelboosteradmin.ui.home.Dashboard"
         android:label="@string/dashboard"
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
         android:id="@+id/nav_admin_users"
-        android:name="com.moutamid.viewplusadmin.ui.gallery.AdminUsersFragment"
+        android:name="com.moutamid.uchannelboosteradmin.ui.gallery.AdminUsersFragment"
         android:label="@string/adminusers"
         tools:layout="@layout/fragment_admin_users" />
 
     <fragment
         android:id="@+id/nav_app_user"
-        android:name="com.moutamid.viewplusadmin.ui.slideshow.AppUsersFragment"
+        android:name="com.moutamid.uchannelboosteradmin.ui.slideshow.AppUsersFragment"
         android:label="@string/appusers"
         tools:layout="@layout/fragment_app_users" />
 
     <fragment
         android:id="@+id/nav_view_tasks"
-        android:name="com.moutamid.viewplusadmin.fragments.ViewTasksFragment"
+        android:name="com.moutamid.uchannelboosteradmin.fragments.ViewTasksFragment"
         android:label="@string/viewtasks"
         tools:layout="@layout/fragment_view_tasks" />
     <fragment
         android:id="@+id/nav_like_tasks"
-        android:name="com.moutamid.viewplusadmin.fragments.LikeTasksFragment"
+        android:name="com.moutamid.uchannelboosteradmin.fragments.LikeTasksFragment"
         android:label="@string/liketasks"
         tools:layout="@layout/fragment_like_tasks" />
     <fragment
         android:id="@+id/nav_subscribe_tasks"
-        android:name="com.moutamid.viewplusadmin.fragments.SubscribeTasksFragment"
+        android:name="com.moutamid.uchannelboosteradmin.fragments.SubscribeTasksFragment"
         android:label="@string/subscrietasks"
         tools:layout="@layout/fragment_subscribe_tasks" />
 
     <fragment
         android:id="@+id/nav_banners"
-        android:name="com.moutamid.viewplusadmin.fragments.BannersFragment"
+        android:name="com.moutamid.uchannelboosteradmin.fragments.BannersFragment"
         android:label="@string/editbanners"
         tools:layout="@layout/fragment_banners" />
 
     <fragment
         android:id="@+id/nav_coins"
-        android:name="com.moutamid.viewplusadmin.fragments.CoinsFragment"
+        android:name="com.moutamid.uchannelboosteradmin.fragments.CoinsFragment"
         android:label="@string/editcoins"
         tools:layout="@layout/fragment_coins" />
 
     <fragment
         android:id="@+id/nav_campaign_values"
-        android:name="com.moutamid.viewplusadmin.fragments.CampaignValuesFragment"
+        android:name="com.moutamid.uchannelboosteradmin.fragments.CampaignValuesFragment"
         android:label="@string/editcampaignvalues"
         tools:layout="@layout/fragment_campaign_values" />
 
     <fragment
         android:id="@+id/nav_notifications"
-        android:name="com.moutamid.viewplusadmin.fragments.NotificationsFragment"
+        android:name="com.moutamid.uchannelboosteradmin.fragments.NotificationsFragment"
         android:label="@string/notifications"
         tools:layout="@layout/fragment_notifications" />
 

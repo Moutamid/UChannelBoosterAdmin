@@ -6,11 +6,32 @@
     android:layout_height="match_parent"
     tools:context=".ui.slideshow.AppUsersFragment">
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/topedittext"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/searchET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Search by poster id"
+            android:inputType="text"
+            android:maxLines="1" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view_tasks_like"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:itemCount="5"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/topedittext"
         tools:listitem="@layout/layout_task_item" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
