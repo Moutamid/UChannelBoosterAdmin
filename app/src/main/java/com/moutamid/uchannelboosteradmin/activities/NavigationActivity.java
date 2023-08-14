@@ -36,7 +36,7 @@ public class NavigationActivity extends AppCompatActivity {
 
     @Override
     protected void attachBaseContext(Context newBase) {
-        Locale newLocale = new Locale(Utils.getString(Constants.CURRENT_LANGUAGE_CODE, "ko"));
+        Locale newLocale = new Locale(Utils.getString(Constants.CURRENT_LANGUAGE_CODE, "en"));
 
         Context context = ContextWrapper.wrap(newBase, newLocale);
         super.attachBaseContext(context);

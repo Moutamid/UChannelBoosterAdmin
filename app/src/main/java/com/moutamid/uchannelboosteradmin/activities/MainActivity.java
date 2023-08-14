@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void attachBaseContext(Context newBase) {
-        Locale newLocale = new Locale(Utils.getString(Constants.CURRENT_LANGUAGE_CODE, "ko"));
+        Locale newLocale = new Locale(Utils.getString(Constants.CURRENT_LANGUAGE_CODE, "en"));
 
         Context context = ContextWrapper.wrap(newBase, newLocale);
         super.attachBaseContext(context);
@@ -62,7 +62,19 @@ public class MainActivity extends AppCompatActivity {
             if (b.passwordEt.getText().toString().isEmpty()) {
                 return;
             }
-            progressDialog.show();
+
+            String email = b.emailEt.getText().toString();
+            String password = b.passwordEt.getText().toString();
+
+            if (email.toLowerCase().equals("admin") && password.toLowerCase().equals("admin")) {
+                Utils.store(Constants.IS_LOGIN, true);
+                Intent intent = new Intent(MainActivity.this, NavigationActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                finish();
+                startActivity(intent);
+            }
+
+            /*progressDialog.show();
             Utils.databaseReference().child("WebUser").orderByChild("Email").equalTo(b.emailEt.getText().toString())
                     .addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
@@ -102,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
                         public void onCancelled(@NonNull DatabaseError error) {
 
                         }
-                    });
+                    });*/
 
         });
 
