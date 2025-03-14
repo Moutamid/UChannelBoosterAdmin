@@ -66,7 +66,7 @@ public class ViewTasksFragment extends Fragment {
         progressDialog.show();
 
         new Thread(() ->
-                Utils.databaseReference().child("tasks").addValueEventListener(new ValueEventListener() {
+                Utils.databaseReference().child("view_tasks").addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         if (snapshot.exists()) {
@@ -174,7 +174,7 @@ public class ViewTasksFragment extends Fragment {
         button.setText(saveBtnText);
 
         if (isCreating) {
-            model.setTaskKey(Utils.databaseReference().child("tasks").push().getKey());
+            model.setTaskKey(Utils.databaseReference().child("view_tasks").push().getKey());
             taskkey.setText(model.getTaskKey());
             current.setText("0");
             completed.setText("error");
@@ -193,7 +193,7 @@ public class ViewTasksFragment extends Fragment {
                 model.setThumbnailUrl(thumbnail.getText().toString());
                 model.setTaskKey(taskkey.getText().toString());
 
-                Utils.databaseReference().child("tasks").child(model.getTaskKey())
+                Utils.databaseReference().child("view_tasks").child(model.getTaskKey())
                         .setValue(model);
 
                 dialog.dismiss();
@@ -281,7 +281,7 @@ public class ViewTasksFragment extends Fragment {
                         .setMessage("Do you really want to delete this task?")
                         .setPositiveButton("No", (dialogInterface, i) -> dialogInterface.dismiss())
                         .setNegativeButton("Yes", (dialogInterface, i) ->
-                                Utils.databaseReference().child("tasks").child(model.getTaskKey())
+                                Utils.databaseReference().child("view_tasks").child(model.getTaskKey())
                                         .removeValue())
                         .show();
             });

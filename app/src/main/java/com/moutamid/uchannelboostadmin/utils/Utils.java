@@ -27,7 +27,7 @@ import java.util.Random;
 public class Utils {
 
     public static DatabaseReference databaseReference() {
-        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("UChannelBooster");
         databaseReference.keepSynced(true);
         return databaseReference;
     }

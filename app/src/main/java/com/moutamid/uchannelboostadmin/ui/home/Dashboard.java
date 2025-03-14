@@ -1,6 +1,7 @@
 package com.moutamid.uchannelboostadmin.ui.home;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,11 +28,12 @@ public class Dashboard extends Fragment {
         Utils.databaseReference().addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot.exists()) {
 
+                if (snapshot.exists()) {
+                    Log.d("dataaaa", snapshot.toString()+"-------");
                     b.totalAdminUserTv.setText(snapshot.child("WebUser").getChildrenCount() + "");
                     b.totalMobileUserTv.setText(snapshot.child("userinfo").getChildrenCount() + "");
-                    b.totalViewTasksTv.setText(snapshot.child("tasks").getChildrenCount() + "");
+                    b.totalViewTasksTv.setText(snapshot.child("view_tasks").getChildrenCount() + "");
                     b.totalSubscribeTasksTv.setText(snapshot.child("subscribe_tasks").getChildrenCount() + "");
                     b.totalLikeTasksTv.setText(snapshot.child("like_tasks").getChildrenCount() + "");
 

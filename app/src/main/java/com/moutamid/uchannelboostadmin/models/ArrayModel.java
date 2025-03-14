@@ -20,6 +20,11 @@ public class ArrayModel {
         this.key = key;
     }
 
+    public ArrayModel(int value, String key) {
+        this.value = value;
+        this.key = key;
+    }
+
     public ArrayModel() {
     }
 }
