@@ -72,8 +72,12 @@
     <string name="editcoins">Edit Coins</string>
     <string name="editcampaignvalues">Edit Campaign Values</string>
     <string name="notifications">Send Notifications</string>
+    <string name="coins_pack">Coins Pack</string>
     <string name="titleet">Enter title</string>
     <string name="descET">Enter description</string>
     <string name="sendBt">Send now</string>
     <string name="language">Change language</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="payment">Payment</string>
 </resources>

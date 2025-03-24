@@ -2,13 +2,23 @@ package com.moutamid.uchannelboostadmin.utils;
 
 import static android.content.Context.WINDOW_SERVICE;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.res.Configuration;
+import android.graphics.drawable.ColorDrawable;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.Window;
 import android.view.WindowManager;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.moutamid.uchannelboostadmin.R;
+
 public class Constants {
+    public static final String USER_INFO = "userinfo";
+
     public static final String IS_LOGIN = "is_login";
     public static final String TYPE_LIKE = "Like: ";
     public static final String TYPE_SUBSCRIBE = "Subscribe: ";
@@ -37,7 +47,25 @@ public class Constants {
     public static final String LANGUAGE_CODE_KOREAN = "ko";
     public static final String LANGUAGE_CODE_VIETNAMESE = "vi";
     public static final String LANGUAGE_CODE_URDU = "ur";
+    public static final String PAYMENTS = "Payments";
+    static Dialog dialog;
 
+
+    public static void initDialog(Context context) {
+        dialog = new Dialog(context);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.loading_dialog);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+        dialog.setCancelable(false);
+    }
+
+    public static void showDialog() {
+        dialog.show();
+    }
+
+    public static void dismissDialog() {
+        dialog.dismiss();
+    }
     public static void adjustFontScale(Context context) {
         Configuration configuration = context.getResources().getConfiguration();
         if (configuration.fontScale > 1.00) {
@@ -49,5 +77,15 @@ public class Constants {
             metrics.scaledDensity = configuration.fontScale * metrics.density;
             context.getResources().updateConfiguration(configuration, metrics);
         }
+    }
+
+    public static FirebaseAuth auth() {
+        return FirebaseAuth.getInstance();
+    }
+
+    public static DatabaseReference databaseReference() {
+        DatabaseReference db = FirebaseDatabase.getInstance().getReference().child("UChannelBooster");
+        db.keepSynced(true);
+        return db;
     }
 }

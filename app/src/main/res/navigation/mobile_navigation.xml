@@ -62,5 +62,15 @@
         android:name="com.moutamid.uchannelboostadmin.fragments.NotificationsFragment"
         android:label="@string/notifications"
         tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/nav_coins_"
+        android:name="com.moutamid.uchannelboostadmin.fragments.ManageCoinsFragment"
+        android:label="@string/coins_pack"
+        tools:layout="@layout/activity_manage_coin_packs" />
+    <fragment
+        android:id="@+id/nav_payment"
+        android:name="com.moutamid.uchannelboostadmin.fragments.PaymentFragment"
+        android:label="@string/payment"
+        tools:layout="@layout/activity_payment" />
 
 </navigation>

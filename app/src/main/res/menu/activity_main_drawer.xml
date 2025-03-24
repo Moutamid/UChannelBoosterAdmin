@@ -51,6 +51,14 @@
             android:id="@+id/nav_notifications"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/notifications" />
+        <item
+            android:id="@+id/nav_coins_"
+            android:icon="@drawable/coin"
+            android:title="Coins Pack" />
+        <item
+            android:id="@+id/nav_payment"
+            android:icon="@drawable/wallet"
+            android:title="Payments" />
 
     </group>
 </menu>

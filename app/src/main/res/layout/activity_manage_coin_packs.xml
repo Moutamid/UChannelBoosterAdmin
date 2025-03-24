@@ -11,32 +11,34 @@
         android:layout_height="wrap_content"
         android:hint="Enter Coins"
         android:inputType="number"
-        android:padding="10dp"/>
+        android:padding="10dp" />
 
     <EditText
         android:id="@+id/priceInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:hint="Enter Price"
         android:inputType="numberDecimal"
-        android:padding="10dp"
-        android:layout_marginTop="8dp"/>
+        android:padding="10dp" />
 
     <!-- Add Button -->
-    <Button
+
+    <!-- RecyclerView to Display Coin Packs -->
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/addButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add Coin Pack"
-        android:backgroundTint="@color/teal_700"
-        android:textColor="@android:color/white"
         android:layout_marginTop="10dp"
-        android:padding="12dp"/>
+        android:background="@drawable/btn_bg"
+        android:padding="12dp"
+        android:text="Add Coin Pack"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white" />
 
-    <!-- RecyclerView to Display Coin Packs -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginTop="16dp" />
 </LinearLayout>
