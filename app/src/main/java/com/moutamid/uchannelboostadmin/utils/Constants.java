@@ -18,6 +18,7 @@ import com.moutamid.uchannelboostadmin.R;
 
 public class Constants {
     public static final String USER_INFO = "userinfo";
+    public static final String VIP_PAYMENTS = "VipPayments";
 
     public static final String IS_LOGIN = "is_login";
     public static final String TYPE_LIKE = "Like: ";

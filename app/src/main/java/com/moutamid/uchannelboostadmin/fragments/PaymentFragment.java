@@ -56,7 +56,6 @@ public class PaymentFragment extends Fragment {
 
 
         list = new ArrayList<>();
-
         binding.paymentRC.setHasFixedSize(false);
         binding.paymentRC.setLayoutManager(new LinearLayoutManager(getContext()));  Constants.initDialog(getContext());
         Constants.showDialog();

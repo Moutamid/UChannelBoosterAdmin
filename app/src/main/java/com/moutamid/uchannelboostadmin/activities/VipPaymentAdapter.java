@@ -32,11 +32,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class PaymentAdapter extends RecyclerView.Adapter<PaymentAdapter.PaymentVH> {
+public class VipPaymentAdapter extends RecyclerView.Adapter<VipPaymentAdapter.PaymentVH> {
     Context context;
     ArrayList<PaymentModel> list;
 
-    public PaymentAdapter(Context context, ArrayList<PaymentModel> list) {
+    public VipPaymentAdapter(Context context, ArrayList<PaymentModel> list) {
         this.context = context;
         this.list = list;
     }
@@ -52,18 +52,18 @@ public class PaymentAdapter extends RecyclerView.Adapter<PaymentAdapter.PaymentV
         PaymentModel model = list.get(holder.getAdapterPosition());
         holder.account_type.setText(model.getAccount_type() + " ");
         holder.date.setText(model.getDate() + " ");
-        holder.amount.setText("$" + model.getAmount() + " for " + model.getNeed_coins() + " coins");
+        holder.amount.setText("$" + model.getAmount() + " for " + model.getDuration());
         holder.buyerEmail.setText(model.getEmail());
         holder.proof.setOnClickListener(v -> showProof(model.getImageLink()));
 
         holder.approve.setOnClickListener(v -> {
             new MaterialAlertDialogBuilder(context).setTitle("Approve Payment").setMessage("Are you sure you want to approve this subscription?").setPositiveButton("Yes", (dialog, which) -> {
                 dialog.dismiss();
-                Constants.databaseReference().child(Constants.PAYMENTS).child(model.getUserId()).setValue(model).addOnSuccessListener(unused -> {
+                Constants.databaseReference().child(Constants.VIP_PAYMENTS).child(model.getUserId()).setValue(model).addOnSuccessListener(unused -> {
                     Map<String, Object> map = new HashMap<>();
-                    int total_coins = Integer.parseInt(model.getNeed_coins()) + Integer.parseInt(model.getCurrent_coins());
-                    map.put("coins", total_coins);
-                    map.put("approve", true);
+                    map.put("vipStatus", true);
+                    map.put("date", model.getDate());
+                    map.put("duration", model.getDuration());
                     Constants.databaseReference().child(Constants.USER_INFO).child(model.getUserId()).updateChildren(map).addOnSuccessListener(unused1 -> {
                         deletePayment(model, 1);
                         Toast.makeText(context, "Subscription Approved", Toast.LENGTH_SHORT).show();
@@ -86,12 +86,11 @@ public class PaymentAdapter extends RecyclerView.Adapter<PaymentAdapter.PaymentV
     private void deletePayment(PaymentModel model, int i) {
         if (model.getImageLink() != null && !model.getImageLink().isEmpty()) {
             FirebaseStorage.getInstance().getReferenceFromUrl(model.getImageLink()).delete().addOnSuccessListener(unused -> {
-                Constants.databaseReference().child(Constants.PAYMENTS).child(model.getUserId()).removeValue().addOnSuccessListener(unused1 -> {
+                Constants.databaseReference().child(Constants.VIP_PAYMENTS).child(model.getUserId()).removeValue().addOnSuccessListener(unused1 -> {
                     if (i == 0) {
                         Map<String, Object> map = new HashMap<>();
-                        int total_coins = Integer.parseInt(model.getNeed_coins()) + Integer.parseInt(model.getCurrent_coins());
-                        map.put("coins", total_coins);
-                        map.put("approve", false);
+                        map.put("vipStatus", false);
+                        map.put("date", model.getDate());
                         Constants.databaseReference().child(Constants.USER_INFO).child(model.getUserId()).updateChildren(map).addOnSuccessListener(unused2 -> {
                             Toast.makeText(context, "Subscription Deleted", Toast.LENGTH_SHORT).show();
                             notifyUser(model.getUserId(), false);
@@ -100,7 +99,7 @@ public class PaymentAdapter extends RecyclerView.Adapter<PaymentAdapter.PaymentV
                 }).addOnFailureListener(e -> Toast.makeText(context, e.getLocalizedMessage(), Toast.LENGTH_SHORT).show());
             }).addOnFailureListener(e -> Toast.makeText(context, "Failed to delete image: " + e.getLocalizedMessage(), Toast.LENGTH_SHORT).show());
         } else {
-            Constants.databaseReference().child(Constants.PAYMENTS).child(model.getUserId()).removeValue().addOnSuccessListener(unused -> {
+            Constants.databaseReference().child(Constants.VIP_PAYMENTS).child(model.getUserId()).removeValue().addOnSuccessListener(unused -> {
 //                        Toast.makeText(context, "Payment Deleted", Toast.LENGTH_SHORT).show();
                 notifyUser(model.getUserId(), false);
             }).addOnFailureListener(e -> Toast.makeText(context, e.getLocalizedMessage(), Toast.LENGTH_SHORT).show());
@@ -146,8 +145,6 @@ public class PaymentAdapter extends RecyclerView.Adapter<PaymentAdapter.PaymentV
     }
 
     private void sendFCMNotification(String token, String message) {
-        // Send FCM notification using Firebase Cloud Messaging (FCM)
-        // You need to implement this method according to your FCM setup
     }
 
     @Override

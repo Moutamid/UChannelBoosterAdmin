@@ -73,7 +73,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:background="#f05050"
+            android:background="#FF9800"
             android:orientation="vertical"
             android:padding="20dp">
 
@@ -104,6 +104,24 @@
                 android:id="@+id/totalLikeTasksTv"
                 style="@style/smallText"
                 android:text="@string/loading" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/vip_request"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="#F44336"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+
+                style="@style/largeText"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:text="All VIP Request" />
+
 
         </LinearLayout>
 

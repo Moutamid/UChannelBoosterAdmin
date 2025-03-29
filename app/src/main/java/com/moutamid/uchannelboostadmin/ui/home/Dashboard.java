@@ -1,5 +1,6 @@
 package com.moutamid.uchannelboostadmin.ui.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -13,6 +14,7 @@ import androidx.lifecycle.ViewModelProvider;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
+import com.moutamid.uchannelboostadmin.activities.VipPaymentActivity;
 import com.moutamid.uchannelboostadmin.databinding.FragmentDashboardBinding;
 import com.moutamid.uchannelboostadmin.utils.Utils;
 
@@ -30,7 +32,7 @@ public class Dashboard extends Fragment {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                 if (snapshot.exists()) {
-                    Log.d("dataaaa", snapshot.toString()+"-------");
+                    Log.d("dataaaa", snapshot.toString() + "-------");
                     b.totalAdminUserTv.setText(snapshot.child("WebUser").getChildrenCount() + "");
                     b.totalMobileUserTv.setText(snapshot.child("userinfo").getChildrenCount() + "");
                     b.totalViewTasksTv.setText(snapshot.child("view_tasks").getChildrenCount() + "");
@@ -45,7 +47,12 @@ public class Dashboard extends Fragment {
 
             }
         });
-
+        b.vipRequest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), VipPaymentActivity.class));
+            }
+        });
         return b.getRoot();
     }
 }

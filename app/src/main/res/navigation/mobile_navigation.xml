@@ -72,5 +72,10 @@
         android:name="com.moutamid.uchannelboostadmin.fragments.PaymentFragment"
         android:label="@string/payment"
         tools:layout="@layout/activity_payment" />
+    <fragment
+        android:id="@+id/nav_bank"
+        android:name="com.moutamid.uchannelboostadmin.fragments.BankFragment"
+        android:label="Banks"
+        tools:layout="@layout/activity_all_bank" />
 
 </navigation>

@@ -3,7 +3,7 @@ package com.moutamid.uchannelboostadmin.models;
 public class PaymentModel {
 
 
-    String userId, email, amount, imageLink, key, current_coins, need_coins;
+    String userId, email, amount, imageLink, key, current_coins, need_coins, account_type, date, duration;
     boolean approve;
 
     public PaymentModel() {
@@ -79,5 +79,29 @@ public class PaymentModel {
 
     public void setNeed_coins(String need_coins) {
         this.need_coins = need_coins;
+    }
+
+    public String getAccount_type() {
+        return account_type;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getDuration() {
+        return duration;
+    }
+
+    public void setDuration(String duration) {
+        this.duration = duration;
+    }
+
+    public void setAccount_type(String account_type) {
+        this.account_type = account_type;
     }
 }

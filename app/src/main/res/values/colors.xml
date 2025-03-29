@@ -11,4 +11,5 @@
     <color name="red">#FF3700B3</color>
     <color name="blueDark">#3F51B5</color>
     <color name="greenDark">#8BC34A</color>
+    <color name="browser_actions_bg_grey">#B6B6B6</color>
 </resources>
